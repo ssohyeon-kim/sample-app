@@ -54,43 +54,23 @@ function CameraButtonGroup({ tick }: { tick: number }) {
           gap: calc(var(--font-size) * 2);
         `}
       >
-        <div
+        <ul
           css={css`
-            display: flex;
-            align-items: center;
-            gap: var(--font-size);
-            margin-left: calc(var(--font-size) * -2);
+            list-style: none;
+            line-height: 1.5;
+            margin-left: 20px;
           `}
         >
-          <div
+          <li
             css={css`
-              width: calc(var(--camera-button-diameter) * 0.8);
-              height: calc(var(--camera-button-diameter) * 0.8);
-              border-radius: calc(var(--camera-button-diameter) * 0.8 / 2);
-              background: blue;
-              overflow: hidden;
+              color: yellow;
             `}
           >
-            thumbnail
-          </div>
-
-          <ul
-            css={css`
-              list-style: none;
-              line-height: 1.5;
-            `}
-          >
-            <li
-              css={css`
-                color: yellow;
-              `}
-            >
-              1s
-            </li>
-            <li>2s</li>
-            <li>3s</li>
-          </ul>
-        </div>
+            1s
+          </li>
+          <li>2s</li>
+          <li>3s</li>
+        </ul>
 
         <div
           css={css`
