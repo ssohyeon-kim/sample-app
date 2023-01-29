@@ -11,7 +11,6 @@ function IphoneFrame({
     <div
       {...restProps}
       css={css`
-        border: solid 1px #abc;
         width: 352px;
         height: 702px;
       `}
@@ -74,7 +73,8 @@ function IphoneFrame({
             <div
               css={css`
                 position: relative;
-                border: calc(var(--phone-border) * 2.5) solid #000;
+                border: calc(var(--phone-border) * 2.5) solid #1d1d1b;
+                background: #1d1d1b;
                 top: calc(var(--phone-width) * 0.2 * 0.3 * -1);
                 width: calc(var(--phone-width) - calc(var(--phone-border) * 6));
                 height: calc(

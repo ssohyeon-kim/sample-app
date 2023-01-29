@@ -1,8 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
+import { css } from "@emotion/react";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import IphoneFrame from "@/components/IphoneFrame";
+import CameraButtonGroup from "@/components/CameraButtonGroup";
+import PhotoSlide from "@/components/PhotoSlide";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +15,19 @@ export default function Home() {
     "--phone-height": "700px",
     "--phone-radius": "30px",
     "--phone-border": "2px",
+    "--font-size": "12px",
+    "--camera-button-diameter": "50px",
   };
+  const [tick, setTick] = useState(0);
+  useEffect((): (() => void) => {
+    const timer = setInterval(() => {
+      setTick((tick) => tick + 1);
+    }, 3000);
+
+    return (): void => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <>
@@ -25,13 +40,18 @@ export default function Home() {
 
       <main className={styles.main} style={variables}>
         <IphoneFrame>
-          <div>
-            <Image
-              src="/photos/photo.png"
-              alt="lens"
-              width={462}
-              height={614}
-            />
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              width: 100%;
+              height: 100%;
+            `}
+          >
+            <PhotoSlide tick={tick} />
+
+            <CameraButtonGroup tick={tick} />
           </div>
         </IphoneFrame>
       </main>
