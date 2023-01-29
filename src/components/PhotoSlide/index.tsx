@@ -51,8 +51,8 @@ function PhotoSlide({ tick }: PhotoSlideProps) {
                 : photos[nextPhotoIndex]
             }
             alt="image"
-            width={350}
-            height={700}
+            width={300}
+            height={600}
           />
         </div>
 
@@ -73,8 +73,8 @@ function PhotoSlide({ tick }: PhotoSlideProps) {
           <Image
             src={photos[nextPhotoIndex]}
             alt="image"
-            width={350}
-            height={700}
+            width={300}
+            height={600}
           />
         </div>
       </div>

@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const variables: Record<string, string> = {
-    "--phone-width": "350px",
-    "--phone-height": "700px",
+    "--phone-width": "300px",
+    "--phone-height": "600px",
     "--phone-radius": "30px",
     "--phone-border": "2px",
     "--font-size": "12px",
